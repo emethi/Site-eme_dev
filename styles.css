@@ -273,7 +273,7 @@ nav {
   background: rgba(255, 255, 255, 0.1);
   padding: 40px;
   border-radius: 1px; /* Adicionado border-radius */
-  width: 300px; /* Mantive o tamanho original */
+  width: 350px; /* Mantive o tamanho original */
   text-align: center;
   transition: transform 0.3s, box-shadow 0.3s;
   border: 2px solid #000000; /* Borda verde */
