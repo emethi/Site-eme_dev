@@ -323,32 +323,47 @@ nav {
   transform: translateY(-5px);
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
 }
+
 /* Responsividade */
 @media (max-width: 768px) {
   .carousel {
     flex-direction: column; /* Alinhar itens verticalmente */
     align-items: center; /* Centralizar itens */
     grid-template-columns: 1fr; /* Uma coluna */
-    padding: 20px; /* Reduzir o padding para telas menores */
+    padding: 10px; /* Reduzir o padding para telas menores */
   }
 
   .project-item {
-    width: 98%; /* Ocupar quase toda a largura da tela */
-    max-width: 400px; /* Limitar a largura máxima para evitar distorções */
+    width: 95%; /* Ocupar quase toda a largura da tela */
+    max-width: none; /* Remover limite máximo de largura */
     margin-right: 0; /* Remover margem direita */
     margin-bottom: 20px; /* Adicionar espaço entre os itens */
-    padding: 20px; /* Ajustar o padding interno */
+    padding: 25px; /* Aumentar o padding interno para melhorar a aparência */
+    border-radius: 8px; /* Bordas arredondadas suaves */
   }
 
   .project-item img {
     max-width: 100%; /* Garantir que a imagem ocupe toda a largura do container */
     height: auto; /* Manter a proporção da imagem */
+    border-radius: 8px; /* Bordas arredondadas para a imagem */
+  }
+
+  .project-item h3 {
+    font-size: 1.5rem; /* Aumentar o tamanho da fonte para melhor legibilidade */
+    margin-bottom: 10px;
+  }
+
+  .project-item p {
+    font-size: 1rem; /* Aumentar o tamanho da fonte para melhor legibilidade */
+    line-height: 1.6; /* Melhorar o espaçamento entre linhas */
+    margin-bottom: 20px;
   }
 
   .view-project-btn {
     width: 100%; /* Fazer o botão ocupar toda a largura do container */
-    padding: 12px; /* Ajustar o padding para melhorar a aparência */
-    font-size: 1rem; /* Aumentar o tamanho da fonte para melhor legibilidade */
+    padding: 14px; /* Aumentar o padding para tornar o botão mais visível */
+    font-size: 1.1rem; /* Aumentar o tamanho da fonte para melhor legibilidade */
+    border-radius: 8px; /* Bordas arredondadas suaves */
   }
 }
 
