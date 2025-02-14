@@ -333,7 +333,7 @@ nav {
   }
 
   .project-item {
-    width: 90%; /* Ocupar quase toda a largura da tela */
+    width: 98%; /* Ocupar quase toda a largura da tela */
     max-width: 400px; /* Limitar a largura máxima para evitar distorções */
     margin-right: 0; /* Remover margem direita */
     margin-bottom: 20px; /* Adicionar espaço entre os itens */
