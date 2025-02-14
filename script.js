@@ -36,14 +36,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     showProjects(currentIndex);
 });
-// CONTATO E ROLAGEM
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('contact-form');
     const confirmationMessage = document.createElement('div');
     confirmationMessage.className = 'confirmation-message';
 
-    form.addEventListener('submit', function(e) {
+    form.addEventListener('submit', function (e) {
         e.preventDefault();
 
         // Obter os valores dos campos do formulário
@@ -66,56 +65,74 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             body: JSON.stringify(data)
         })
-        .then(response => response.json())
-        .then(data => {
-            console.log('Success:', data);
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
 
-            // Limpar os campos do formulário
-            form.reset();
+                // Limpar os campos do formulário
+                form.reset();
 
-            // Mostrar a mensagem de confirmação
-            confirmationMessage.innerHTML = '<p class="success">E-mail enviado com sucesso!</p>';
-            form.appendChild(confirmationMessage);
-            setTimeout(function() {
-                confirmationMessage.remove();
-            }, 3000);
-        })
-        .catch((error) => {
-            console.error('Error:', error);
-            confirmationMessage.innerHTML = '<p class="error">Ocorreu um erro ao enviar o e-mail.</p>';
-            form.appendChild(confirmationMessage);
-            setTimeout(function() {
-                confirmationMessage.remove();
-            }, 3000);
-        });
+                // Mostrar a mensagem de confirmação
+                confirmationMessage.innerHTML = '<p class="success">E-mail enviado com sucesso!</p>';
+                form.appendChild(confirmationMessage);
+
+                setTimeout(function () {
+                    confirmationMessage.remove();
+                }, 3000);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+
+                // Mostrar mensagem de erro
+                confirmationMessage.innerHTML = '<p class="error">Ocorreu um erro ao enviar o e-mail.</p>';
+                form.appendChild(confirmationMessage);
+
+                setTimeout(function () {
+                    confirmationMessage.remove();
+                }, 3000);
+            });
     });
 
-        // Retorna ao topo da página ao atualizar
-        window.addEventListener('load', function() {
-            window.scrollTo(0, 0);
-        });
-    
-        // Scroll to top button functionality
+    // Scroll to top button functionality
+    let backToTopButton = document.getElementById('back-to-top');
+    let scrollTimeout;
 
+    // Função para mostrar o botão
+    function showBackToTopButton() {
+        backToTopButton.style.display = 'block';
+    }
 
-            // Scroll to top button functionality
-            let backToTopButton = document.getElementById('back-to-top');
-        
-            window.addEventListener('scroll', function() {
-                if (window.pageYOffset > 100) {
-                    backToTopButton.style.display = 'block';
-                } else {
-                    backToTopButton.style.display = 'none';
-                }
-            });
-        
-            backToTopButton.addEventListener('click', function() {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            });
+    // Função para ocultar o botão
+    function hideBackToTopButton() {
+        backToTopButton.style.display = 'none';
+    }
+
+    // Evento de rolagem da página
+    window.addEventListener('scroll', function () {
+        if (window.pageYOffset > 100) {
+            // Mostra o botão se a página for rolada mais de 100px
+            showBackToTopButton();
+
+            // Limpa o temporizador anterior, se existir
+            clearTimeout(scrollTimeout);
+
+            // Define um novo temporizador para ocultar o botão após 2 segundos de inatividade
+            scrollTimeout = setTimeout(hideBackToTopButton, 1000);
+        } else {
+            // Oculta o botão imediatamente se a página estiver no topo
+            hideBackToTopButton();
+        }
+    });
+
+    // Evento de clique no botão
+    backToTopButton.addEventListener('click', function () {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
         });
+    });
+});
+
 
 //PROJETOS
 
