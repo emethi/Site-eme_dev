@@ -16,7 +16,7 @@ nav {
 }
 
 .logo img {
-  width: 110px;
+  width: 100px;
   animation: floatLogo 3s infinite ease-in-out;
 }
 
@@ -323,22 +323,34 @@ nav {
   transform: translateY(-5px);
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
 }
-
 /* Responsividade */
 @media (max-width: 768px) {
   .carousel {
     flex-direction: column; /* Alinhar itens verticalmente */
     align-items: center; /* Centralizar itens */
-    grid-template-columns: 1fr; /* Na tela muito pequena, uma coluna */
+    grid-template-columns: 1fr; /* Uma coluna */
+    padding: 20px; /* Reduzir o padding para telas menores */
   }
 
   .project-item {
-    width: 100%; /* Preencher a largura da tela */
+    width: 90%; /* Ocupar quase toda a largura da tela */
+    max-width: 400px; /* Limitar a largura máxima para evitar distorções */
     margin-right: 0; /* Remover margem direita */
-    margin-bottom: 10px; /* Adicionar espaço entre os itens */
+    margin-bottom: 20px; /* Adicionar espaço entre os itens */
+    padding: 20px; /* Ajustar o padding interno */
   }
 
+  .project-item img {
+    max-width: 100%; /* Garantir que a imagem ocupe toda a largura do container */
+    height: auto; /* Manter a proporção da imagem */
   }
+
+  .view-project-btn {
+    width: 100%; /* Fazer o botão ocupar toda a largura do container */
+    padding: 12px; /* Ajustar o padding para melhorar a aparência */
+    font-size: 1rem; /* Aumentar o tamanho da fonte para melhor legibilidade */
+  }
+}
 
 
 /* SEÇÃO SERVIÇOS */
