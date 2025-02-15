@@ -225,27 +225,26 @@ nav {
 }
 
 /* SEÇÃO PORTFOLIO */
-
 .portfolio {
-  background-color: #ffffff; /* Fundo escuro */
-  color: #212321; /* Texto branco */
+  background-color: #ffffff;
+  color: #212321;
   padding: 50px 20px;
   text-align: center;
-  
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .portfolio-header {
   text-align: center;
   margin-bottom: 10px;
-  
 }
 
 .portfolio-badge {
   display: inline-block;
-  background-color: #000000; /* Roxo da logo */
-  color: #f7be12; /* Branco da logo */
+  background-color: #000000;
+  color: #f7be12;
   padding: 10px 15px;
-  border-radius: 4px;
+  border-radius: 8px; /* Ajustado */
   font-weight: bold;
   margin-bottom: 10px;
   font-size: 2.5rem;
@@ -262,43 +261,41 @@ nav {
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
-  
 }
 
-/* Adicionei os estilos do .project-grid ao .carousel */
 .carousel {
   display: flex;
-  flex-wrap: wrap; /* Habilitar a quebra de linha */
+  flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
-  grid-template-columns: repeat(3, 1fr);
 }
 
 .project-item {
   background: #f7be12;
   padding: 40px;
-  border-radius: 1px; /* Adicionado border-radius */
-  width: 350px; /* Mantive o tamanho original */
+  border-radius: 8px; /* Ajustado */
+  width: 90%;
+  max-width: 350px; /* Limita o tamanho máximo */
   text-align: center;
   transition: transform 0.3s, box-shadow 0.3s;
-  border: 2px solid #000000; /* Borda  */
+  border: 2px solid #000000;
   margin-right: 10px;
 }
 
 .project-item:hover {
-  transform: scale(1.05); /* Ajustei o scale para combinar */
+  transform: scale(1.05);
   box-shadow: 0px 0px 20px #00d4ff;
 }
 
 .project-item img {
-  width: 100%; /* Ajusta a largura ao contêiner */
-  max-width: 300px; /* Define um tamanho máximo */
-  height: 200px; /* Mantém altura fixa para uniformidade */
-  object-fit: cover; /* Garante que a imagem preencha sem distorcer */
-  border-radius: 1px; /* Bordas arredondadas */
+  width: 100%;
+  max-width: 300px;
+  height: auto; /* Altura relativa */
+  object-fit: cover;
+  border-radius: 8px; /* Ajustado */
   display: block;
-  margin: 0 auto; /* Centraliza a imagem */
-  border: 2px solid #000000; /* Borda */
+  margin: 0 auto;
+  border: 2px solid #000000;
 }
 
 .project-item h3 {
@@ -315,62 +312,35 @@ nav {
 
 /* Estilo para botões */
 .view-project-btn {
-  background-color: #060606; 
-  color: #f7be12; 
+  background-color: #060606;
+  color: #f7be12;
   padding: 10px 20px;
   border: none;
-  border-radius: 4px; /* Ajustado */
+  border-radius: 8px; /* Ajustado */
   cursor: pointer;
   transition: all 0.1s ease-in-out;
 }
 
 .view-project-btn:hover {
-  transform: translateY(-5px);
+  transform: translateY(-3px); /* Ajustado */
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
 }
+
 /* Responsividade */
 @media (max-width: 768px) {
   .carousel {
-    flex-direction: column; /* Alinhar itens verticalmente */
-    align-items: center; /* Centralizar itens */
-    grid-template-columns: 1fr; /* Uma coluna */
-    padding: 20px; /* Reduzir o padding para telas menores */
+    gap: 15px;
   }
 
   .project-item {
-    width: 95%; /* Ocupar quase toda a largura da tela */
-    max-width: none; /* Remover limite máximo de largura */
-    margin-right: 0; /* Remover margem direita */
-    margin-bottom: 20px; /* Adicionar espaço entre os itens */
-    padding: 25px; /* Aumentar o padding interno para melhorar a aparência */
-    border-radius: 8px; /* Bordas arredondadas suaves */
+    width: 100%;
+    padding: 20px;
   }
 
   .project-item img {
-    max-width: 100%; /* Garantir que a imagem ocupe toda a largura do container */
-    height: auto; /* Manter a proporção da imagem */
-    border-radius: 8px; /* Bordas arredondadas para a imagem */
-  }
-
-  .project-item h3 {
-    font-size: 1.5rem; /* Aumentar o tamanho da fonte para melhor legibilidade */
-    margin-bottom: 10px;
-  }
-
-  .project-item p {
-    font-size: 1rem; /* Aumentar o tamanho da fonte para melhor legibilidade */
-    line-height: 1.6; /* Melhorar o espaçamento entre linhas */
-    margin-bottom: 20px;
-  }
-
-  .view-project-btn {
-    width: 100%; /* Fazer o botão ocupar toda a largura do container */
-    padding: 14px; /* Aumentar o padding para tornar o botão mais visível */
-    font-size: 1.1rem; /* Aumentar o tamanho da fonte para melhor legibilidade */
-    border-radius: 8px; /* Bordas arredondadas suaves */
+    max-width: 100%; /* Ajusta a imagem para ocupar toda a largura */
   }
 }
-
 
 /* SEÇÃO SERVIÇOS */
 
